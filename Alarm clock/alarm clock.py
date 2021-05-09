@@ -3,10 +3,10 @@ from playsound import playsound
 import time
 
 hour = "11"
-minut = "45"
+minute = "45"
 secs = "00"
-alarm = hour+":"+minut+":"+secs
-alarm_end = hour+":"+minut+":"+"15"
+alarm = hour+":"+minute+":"+secs
+alarm_end = hour+":"+minute+":"+"15"
 
 while True:
 	print("\n"*100)
@@ -14,6 +14,3 @@ while True:
 	time.sleep(1)
 	if time.strftime("%X") == alarm:
 			playsound("alarm.mp3",False)	# False causa execução do som assincronicamente, então o relógio prossegue.
-		
-
-

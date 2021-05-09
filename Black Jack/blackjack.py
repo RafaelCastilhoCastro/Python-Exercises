@@ -1,373 +1,4 @@
-'''
-TO DO:
-- Double down
-
-'''
-player_cards = []
-dealer_cards = []
-deck = []
-
-def deck_shuffle():
-	global deck
-	global player_cards
-	global dealer_cards
-	deck = ["2","3","4","5","6","7","8","9","10","J","Q","K","A"]*5
-	import random
-	random.shuffle(deck)
-	player_cards = []
-	dealer_cards = []
-
-# DEALER HANDS
-def dealer_show1():
-	global dealer_cards
-	global dealer_cards_count
-	dealer_cards_count = 1
-	dealer_cards.append(deck[0])
-	check_sum_dealer()
-	deck.pop(0)
-	print()
-	print(" << Dealer")
-	print(" ____"+"  ____")
-	print(f"|{dealer_cards[0]:2}  |"+"|    |")
-	print("|    |"+"| ** |")
-	print(f"|__{dealer_cards[0]:>2}|"+"|____|")
-	print("Total: ",dealer_sumtotal)
-	print()
-
-def dealer_show2():
-	global dealer_cards
-	global dealer_cards_count
-	dealer_cards_count = 2
-	dealer_cards.append(deck[0])
-	check_sum_dealer()
-	deck.pop(0)
-	print()
-	print(" << Dealer")
-	print(" ____"+"  ____")
-	print(f"|{dealer_cards[0]:2}  |"+f"|{dealer_cards[1]:2}  |")
-	print("|    |"+"|    |")
-	print(f"|__{dealer_cards[0]:>2}|"+f"|__{dealer_cards[1]:>2}|")
-	print("Total: ",dealer_sumtotal)
-	print()
-
-def dealer_show3():
-	global dealer_cards
-	global dealer_cards_count
-	dealer_cards_count = 3
-	dealer_cards.append(deck[0])
-	check_sum_dealer()
-	deck.pop(0)
-	print()
-	print(" << Dealer")
-	print(" ____"+"  ____"+"  ____")
-	print(f"|{dealer_cards[0]:2}  |"+f"|{dealer_cards[1]:2}  |"+f"|{dealer_cards[2]:2}  |")
-	print("|    |"+"|    |"+"|    |")
-	print(f"|__{dealer_cards[0]:>2}|"+f"|__{dealer_cards[1]:>2}|"+f"|__{dealer_cards[2]:>2}|")
-	print("Total: ",dealer_sumtotal)
-	print()
-
-def dealer_show4():
-	global dealer_cards
-	global dealer_cards_count
-	dealer_cards_count = 4
-	dealer_cards.append(deck[0])
-	check_sum_dealer()
-	deck.pop(0)
-	print()
-	print(" << Dealer")
-	print(" ____"+"  ____"+"  ____"+"  ____")
-	print(f"|{dealer_cards[0]:2}  |"+f"|{dealer_cards[1]:2}  |"+f"|{dealer_cards[2]:2}  |"+f"|{dealer_cards[3]:2}  |")
-	print("|    |"+"|    |"+"|    |"+"|    |")
-	print(f"|__{dealer_cards[0]:>2}|"+f"|__{dealer_cards[1]:>2}|"+f"|__{dealer_cards[2]:>2}|"+f"|__{dealer_cards[3]:>2}|")
-	print("Total: ",dealer_sumtotal)
-	print()
-
-def dealer_show5():
-	global dealer_cards
-	global dealer_cards_count
-	dealer_cards_count = 5
-	dealer_cards.append(deck[0])
-	check_sum_dealer()
-	deck.pop(0)
-	print()
-	print(" << Dealer")
-	print(" ____"+"  ____"+"  ____"+"  ____"+"  ____")
-	print(f"|{dealer_cards[0]:2}  |"+f"|{dealer_cards[1]:2}  |"+f"|{dealer_cards[2]:2}  |"+f"|{dealer_cards[3]:2}  |"+f"|{dealer_cards[4]:2}  |")
-	print("|    |"+"|    |"+"|    |"+"|    |"+"|    |")
-	print(f"|__{dealer_cards[0]:>2}|"+f"|__{dealer_cards[1]:>2}|"+f"|__{dealer_cards[2]:>2}|"+f"|__{dealer_cards[3]:>2}|"+f"|__{dealer_cards[4]:>2}|")
-	print("Total: ",dealer_sumtotal)
-	print()
-
-def dealer_show6():
-	global dealer_cards
-	global dealer_cards_count
-	dealer_cards_count = 6
-	dealer_cards.append(deck[0])
-	check_sum_dealer()
-	deck.pop(0)
-	print()
-	print(" << Dealer")
-	print(" ____"+"  ____"+"  ____"+"  ____"+"  ____"+"  ____")
-	print(f"|{dealer_cards[0]:2}  |"+f"|{dealer_cards[1]:2}  |"+f"|{dealer_cards[2]:2}  |"+f"|{dealer_cards[3]:2}  |"+f"|{dealer_cards[4]:2}  |"+f"|{dealer_cards[5]:2}  |")
-	print("|    |"+"|    |"+"|    |"+"|    |"+"|    |"+"|    |")
-	print(f"|__{dealer_cards[0]:>2}|"+f"|__{dealer_cards[1]:>2}|"+f"|__{dealer_cards[2]:>2}|"+f"|__{dealer_cards[3]:>2}|"+f"|__{dealer_cards[4]:>2}|"+f"|__{dealer_cards[5]:>2}|")
-	print("Total: ",dealer_sumtotal)
-	print()
-
-def dealer_show7():
-	global dealer_cards
-	global dealer_cards_count
-	dealer_cards_count = 7
-	dealer_cards.append(deck[0])
-	check_sum_dealer()
-	deck.pop(0)
-	print()
-	print(" << Dealer")
-	print(" ____"+"  ____"+"  ____"+"  ____"+"  ____"+"  ____"+"  ____")
-	print(f"|{dealer_cards[0]:2}  |"+f"|{dealer_cards[1]:2}  |"+f"|{dealer_cards[2]:2}  |"+f"|{dealer_cards[3]:2}  |"+f"|{dealer_cards[4]:2}  |"+f"|{dealer_cards[5]:2}  |"+f"|{dealer_cards[6]:2}  |")
-	print("|    |"+"|    |"+"|    |"+"|    |"+"|    |"+"|    |"+"|    |")
-	print(f"|__{dealer_cards[0]:>2}|"+f"|__{dealer_cards[1]:>2}|"+f"|__{dealer_cards[2]:>2}|"+f"|__{dealer_cards[3]:>2}|"+f"|__{dealer_cards[4]:>2}|"+f"|__{dealer_cards[5]:>2}|"+f"|__{dealer_cards[6]:>2}|")
-	print("Total: ",dealer_sumtotal)
-	print()
-
-def dealer_show8():
-	global dealer_cards
-	global dealer_cards_count
-	dealer_cards_count = 8
-	dealer_cards.append(deck[0])
-	check_sum_dealer()
-	deck.pop(0)
-	print()
-	print(" << Dealer")
-	print(" ____"+"  ____"+"  ____"+"  ____"+"  ____"+"  ____"+"  ____"+"  ____")
-	print(f"|{dealer_cards[0]:2}  |"+f"|{dealer_cards[1]:2}  |"+f"|{dealer_cards[2]:2}  |"+f"|{dealer_cards[3]:2}  |"+f"|{dealer_cards[4]:2}  |"+f"|{dealer_cards[5]:2}  |"+f"|{dealer_cards[6]:2}  |"+f"|{dealer_cards[7]:2}  |")
-	print("|    |"+"|    |"+"|    |"+"|    |"+"|    |"+"|    |"+"|    |"+"|    |")
-	print(f"|__{dealer_cards[0]:>2}|"+f"|__{dealer_cards[1]:>2}|"+f"|__{dealer_cards[2]:>2}|"+f"|__{dealer_cards[3]:>2}|"+f"|__{dealer_cards[4]:>2}|"+f"|__{dealer_cards[5]:>2}|"+f"|__{dealer_cards[6]:>2}|"+f"|__{dealer_cards[7]:>2}|")
-	print("Total: ",dealer_sumtotal)
-	print()
-
-def dealer_show9():
-	global dealer_cards
-	global dealer_cards_count
-	dealer_cards_count = 9
-	dealer_cards.append(deck[0])
-	check_sum_dealer()
-	deck.pop(0)
-	print()
-	print(" << Dealer")
-	print(" ____"+"  ____"+"  ____"+"  ____"+"  ____"+"  ____"+"  ____"+"  ____"+"  ____")
-	print(f"|{dealer_cards[0]:2}  |"+f"|{dealer_cards[1]:2}  |"+f"|{dealer_cards[2]:2}  |"+f"|{dealer_cards[3]:2}  |"+f"|{dealer_cards[4]:2}  |"+f"|{dealer_cards[5]:2}  |"+f"|{dealer_cards[6]:2}  |"+f"|{dealer_cards[7]:2}  |"+f"|{dealer_cards[8]:2}  |")
-	print("|    |"+"|    |"+"|    |"+"|    |"+"|    |"+"|    |"+"|    |"+"|    |"+"|    |")
-	print(f"|__{dealer_cards[0]:>2}|"+f"|__{dealer_cards[1]:>2}|"+f"|__{dealer_cards[2]:>2}|"+f"|__{dealer_cards[3]:>2}|"+f"|__{dealer_cards[4]:>2}|"+f"|__{dealer_cards[5]:>2}|"+f"|__{dealer_cards[6]:>2}|"+f"|__{dealer_cards[7]:>2}|"+f"|__{dealer_cards[8]:>2}|")
-	print("Total: ",dealer_sumtotal)
-	print()
-
-def dealer_show10():
-	global dealer_cards
-	global dealer_cards_count
-	dealer_cards_count = 10
-	dealer_cards.append(deck[0])
-	check_sum_dealer()
-	deck.pop(0)
-	print()
-	print(" << Dealer")
-	print(" ____"+"  ____"+"  ____"+"  ____"+"  ____"+"  ____"+"  ____"+"  ____"+"  ____"+"  ____")
-	print(f"|{dealer_cards[0]:2}  |"+f"|{dealer_cards[1]:2}  |"+f"|{dealer_cards[2]:2}  |"+f"|{dealer_cards[3]:2}  |"+f"|{dealer_cards[4]:2}  |"+f"|{dealer_cards[5]:2}  |"+f"|{dealer_cards[6]:2}  |"+f"|{dealer_cards[7]:2}  |"+f"|{dealer_cards[8]:2}  |"+f"|{dealer_cards[9]:2}  |")
-	print("|    |"+"|    |"+"|    |"+"|    |"+"|    |"+"|    |"+"|    |"+"|    |"+"|    |"+"|    |")
-	print(f"|__{dealer_cards[0]:>2}|"+f"|__{dealer_cards[1]:>2}|"+f"|__{dealer_cards[2]:>2}|"+f"|__{dealer_cards[3]:>2}|"+f"|__{dealer_cards[4]:>2}|"+f"|__{dealer_cards[5]:>2}|"+f"|__{dealer_cards[6]:>2}|"+f"|__{dealer_cards[7]:>2}|"+f"|__{dealer_cards[8]:>2}|"+f"|__{dealer_cards[9]:>2}|")
-	print("Total: ",dealer_sumtotal)
-	print()
-
-def dealer_show11():
-	global dealer_cards
-	global dealer_cards_count
-	dealer_cards_count = 11
-	dealer_cards.append(deck[0])
-	check_sum_dealer()
-	deck.pop(0)
-	print()
-	print(" << Dealer")
-	print(" ____"+"  ____"+"  ____"+"  ____"+"  ____"+"  ____"+"  ____"+"  ____"+"  ____"+"  ____"+"  ____")
-	print(f"|{dealer_cards[0]:2}  |"+f"|{dealer_cards[1]:2}  |"+f"|{dealer_cards[2]:2}  |"+f"|{dealer_cards[3]:2}  |"+f"|{dealer_cards[4]:2}  |"+f"|{dealer_cards[5]:2}  |"+f"|{dealer_cards[6]:2}  |"+f"|{dealer_cards[7]:2}  |"+f"|{dealer_cards[8]:2}  |"+f"|{dealer_cards[9]:2}  |"+f"|{dealer_cards[10]:2}  |")
-	print("|    |"+"|    |"+"|    |"+"|    |"+"|    |"+"|    |"+"|    |"+"|    |"+"|    |"+"|    |"+"|    |")
-	print(f"|__{dealer_cards[0]:>2}|"+f"|__{dealer_cards[1]:>2}|"+f"|__{dealer_cards[2]:>2}|"+f"|__{dealer_cards[3]:>2}|"+f"|__{dealer_cards[4]:>2}|"+f"|__{dealer_cards[5]:>2}|"+f"|__{dealer_cards[6]:>2}|"+f"|__{dealer_cards[7]:>2}|"+f"|__{dealer_cards[8]:>2}|"+f"|__{dealer_cards[9]:>2}|"+f"|__{dealer_cards[10]:>2}|")
-	print("Total: ",dealer_sumtotal)
-	print()
-
-def dealer_show12():
-	global dealer_cards
-	global dealer_cards_count
-	dealer_cards_count = 12
-	dealer_cards.append(deck[0])
-	check_sum_dealer()
-	deck.pop(0)
-	print()
-	print(" << Dealer")
-	print(" ____"+"  ____"+"  ____"+"  ____"+"  ____"+"  ____"+"  ____"+"  ____"+"  ____"+"  ____"+"  ____"+"  ____")
-	print(f"|{dealer_cards[0]:2}  |"+f"|{dealer_cards[1]:2}  |"+f"|{dealer_cards[2]:2}  |"+f"|{dealer_cards[3]:2}  |"+f"|{dealer_cards[4]:2}  |"+f"|{dealer_cards[5]:2}  |"+f"|{dealer_cards[6]:2}  |"+f"|{dealer_cards[7]:2}  |"+f"|{dealer_cards[8]:2}  |"+f"|{dealer_cards[9]:2}  |"+f"|{dealer_cards[10]:2}  |"+f"|{dealer_cards[11]:2}  |")
-	print("|    |"+"|    |"+"|    |"+"|    |"+"|    |"+"|    |"+"|    |"+"|    |"+"|    |"+"|    |"+"|    |"+"|    |")
-	print(f"|__{dealer_cards[0]:>2}|"+f"|__{dealer_cards[1]:>2}|"+f"|__{dealer_cards[2]:>2}|"+f"|__{dealer_cards[3]:>2}|"+f"|__{dealer_cards[4]:>2}|"+f"|__{dealer_cards[5]:>2}|"+f"|__{dealer_cards[6]:>2}|"+f"|__{dealer_cards[7]:>2}|"+f"|__{dealer_cards[8]:>2}|"+f"|__{dealer_cards[9]:>2}|"+f"|__{dealer_cards[10]:>2}|"+f"|__{dealer_cards[11]:>2}|")
-	print("Total: ",dealer_sumtotal)
-	print()
-
-# PLAYER HANDS
-def player_show2():
-	global player_cards
-	global player_cards_count
-	player_cards_count = 2
-	player_cards.append(deck[0])
-	check_sum_player()
-	deck.pop(0)
-	player_cards.append(deck[0])
-	check_sum_player()
-	deck.pop(0)
-	print()
-	print(" >> Player")
-	print(" ____"+"  ____")
-	print(f"|{player_cards[0]:2}  |"+f"|{player_cards[1]:2}  |")
-	print("Total: ",player_sumtotal)
-	print()
-
-def player_show3():
-	global player_cards
-	global player_cards_count
-	player_cards_count = 3
-	player_cards.append(deck[0])
-	check_sum_player()
-	deck.pop(0)
-	print()
-	print(" >> Player")
-	print(" ____"+"  ____"+"  ____")
-	print(f"|{player_cards[0]:2}  |"+f"|{player_cards[1]:2}  |"+f"|{player_cards[2]:2}  |")
-	print("Total: ",player_sumtotal)
-	print()
-
-def player_show4():
-	global player_cards
-	global player_cards_count
-	player_cards_count = 4
-	player_cards.append(deck[0])
-	check_sum_player()
-	deck.pop(0)
-	print()
-	print(" >> Player")
-	print(" ____"+"  ____"+"  ____"+"  ____")
-	print(f"|{player_cards[0]:2}  |"+f"|{player_cards[1]:2}  |"+f"|{player_cards[2]:2}  |"+f"|{player_cards[3]:2}  |")
-	print("Total: ",player_sumtotal)
-	print()
-
-def player_show5():
-	global player_cards
-	global player_cards_count
-	player_cards_count = 5
-	player_cards.append(deck[0])
-	check_sum_player()
-	deck.pop(0)
-	print()
-	print(" >> Player")
-	print(" ____"+"  ____"+"  ____"+"  ____"+"  ____")
-	print(f"|{player_cards[0]:2}  |"+f"|{player_cards[1]:2}  |"+f"|{player_cards[2]:2}  |"+f"|{player_cards[3]:2}  |"+f"|{player_cards[4]:2}  |")
-	print("Total: ",player_sumtotal)
-	print()
-
-def player_show6():
-	global player_cards
-	global player_cards_count
-	player_cards_count = 6
-	player_cards.append(deck[0])
-	check_sum_player()
-	deck.pop(0)
-	print()
-	print(" >> Player")
-	print(" ____"+"  ____"+"  ____"+"  ____"+"  ____"+"  ____")
-	print(f"|{player_cards[0]:2}  |"+f"|{player_cards[1]:2}  |"+f"|{player_cards[2]:2}  |"+f"|{player_cards[3]:2}  |"+f"|{player_cards[4]:2}  |"+f"|{player_cards[5]:2}  |")
-	print("Total: ",player_sumtotal)
-	print()
-
-def player_show7():
-	global player_cards
-	global player_cards_count
-	player_cards_count = 7
-	player_cards.append(deck[0])
-	check_sum_player()
-	deck.pop(0)
-	print()
-	print(" >> Player")
-	print(" ____"+"  ____"+"  ____"+"  ____"+"  ____"+"  ____"+"  ____")
-	print(f"|{player_cards[0]:2}  |"+f"|{player_cards[1]:2}  |"+f"|{player_cards[2]:2}  |"+f"|{player_cards[3]:2}  |"+f"|{player_cards[4]:2}  |"+f"|{player_cards[5]:2}  |"+f"|{player_cards[6]:2}  |")
-	print("Total: ",player_sumtotal)
-	print()
-
-def player_show8():
-	global player_cards
-	global player_cards_count
-	player_cards_count = 8
-	player_cards.append(deck[0])
-	check_sum_player()
-	deck.pop(0)
-	print()
-	print(" >> Player")
-	print(" ____"+"  ____"+"  ____"+"  ____"+"  ____"+"  ____"+"  ____"+"  ____")
-	print(f"|{player_cards[0]:2}  |"+f"|{player_cards[1]:2}  |"+f"|{player_cards[2]:2}  |"+f"|{player_cards[3]:2}  |"+f"|{player_cards[4]:2}  |"+f"|{player_cards[5]:2}  |"+f"|{player_cards[6]:2}  |"+f"|{player_cards[7]:2}  |")
-	print("Total: ",player_sumtotal)
-	print()
-
-def player_show9():
-	global player_cards
-	global player_cards_count
-	player_cards_count = 9
-	player_cards.append(deck[0])
-	check_sum_player()
-	deck.pop(0)
-	print()
-	print(" >> Player")
-	print(" ____"+"  ____"+"  ____"+"  ____"+"  ____"+"  ____"+"  ____"+"  ____"+"  ____")
-	print(f"|{player_cards[0]:2}  |"+f"|{player_cards[1]:2}  |"+f"|{player_cards[2]:2}  |"+f"|{player_cards[3]:2}  |"+f"|{player_cards[4]:2}  |"+f"|{player_cards[5]:2}  |"+f"|{player_cards[6]:2}  |"+f"|{player_cards[7]:2}  |"+f"|{player_cards[8]:2}  |")
-	print("Total: ",player_sumtotal)
-	print()
-
-def player_show10():
-	global player_cards
-	global player_cards_count
-	player_cards_count = 10
-	player_cards.append(deck[0])
-	check_sum_player()
-	deck.pop(0)
-	print()
-	print(" >> Player")
-	print(" ____"+"  ____"+"  ____"+"  ____"+"  ____"+"  ____"+"  ____"+"  ____"+"  ____"+"  ____")
-	print(f"|{player_cards[0]:2}  |"+f"|{player_cards[1]:2}  |"+f"|{player_cards[2]:2}  |"+f"|{player_cards[3]:2}  |"+f"|{player_cards[4]:2}  |"+f"|{player_cards[5]:2}  |"+f"|{player_cards[6]:2}  |"+f"|{player_cards[7]:2}  |"+f"|{player_cards[8]:2}  |"+f"|{player_cards[9]:2}  |")
-	print("Total: ",player_sumtotal)
-	print()
-
-def player_show11():
-	global player_cards
-	global player_cards_count
-	player_cards_count = 11
-	player_cards.append(deck[0])
-	check_sum_player()
-	deck.pop(0)
-	print()
-	print(" >> Player")
-	print(" ____"+"  ____"+"  ____"+"  ____"+"  ____"+"  ____"+"  ____"+"  ____"+"  ____"+"  ____"+"  ____")
-	print(f"|{player_cards[0]:2}  |"+f"|{player_cards[1]:2}  |"+f"|{player_cards[2]:2}  |"+f"|{player_cards[3]:2}  |"+f"|{player_cards[4]:2}  |"+f"|{player_cards[5]:2}  |"+f"|{player_cards[6]:2}  |"+f"|{player_cards[7]:2}  |"+f"|{player_cards[8]:2}  |"+f"|{player_cards[9]:2}  |"+f"|{player_cards[10]:2}  |")
-	print("Total: ",player_sumtotal)
-	print()
-
-def player_show12():
-	global player_cards
-	global player_cards_count
-	player_cards_count = 12
-	player_cards.append(deck[0])
-	check_sum_player()
-	deck.pop(0)
-	print()
-	print(" >> Player")
-	print(" ____"+"  ____"+"  ____"+"  ____"+"  ____"+"  ____"+"  ____"+"  ____"+"  ____"+"  ____"+"  ____"+"  ____")
-	print(f"|{player_cards[0]:2}  |"+f"|{player_cards[1]:2}  |"+f"|{player_cards[2]:2}  |"+f"|{player_cards[3]:2}  |"+f"|{player_cards[4]:2}  |"+f"|{player_cards[5]:2}  |"+f"|{player_cards[6]:2}  |"+f"|{player_cards[7]:2}  |"+f"|{player_cards[8]:2}  |"+f"|{player_cards[9]:2}  |"+f"|{player_cards[10]:2}  |"+f"|{player_cards[11]:2}  |")
-	print("Total: ",player_sumtotal)
-	print()
-
+# --- OPENING ---
 def opening():
 	print("-+-  ****   **        *       **    **    **         ***     *       **    **    **")
 	print("     **  *  **      ** **   **  **  **  **            **   ** **   **  **  **  **")
@@ -376,314 +7,246 @@ def opening():
 	print("     ****   *****  **   **    **    **    **      ******  **   **    **    **    **")
 	print("     ==============================================================================")
 	print()
-	input("						Digite qualquer tecla para começar.")
+	input("						            Press any key to start.")
 	print("\n"*5)
-	new_round()
 
-saldo = 1000
-bet_aux = ""
-bet = 0
-bet_pool = 0
+
+# --- BETS ---
+balance = 1000
 
 def bets():
-	global saldo
-	global bet_aux
-	global bet
-	global bet_pool
-	print("	Seu saldo: $", saldo)
-	print("																	Aposta mín: $10")
-	print("																	Aposta máx: $100")
+	global balance
+	if balance == 0:
+		while True:
+			newRound = input('No balance. Buy-in again?')
+			if newRound.lower() == 'y' or newRound.lower() == 'yes':
+				balance = 1000
+				print()
+				break
+			else:
+				print("Please try again.")
+	global betPool
+	betPool = 0
+	print("	Your balance: $", balance)
+	print("									Min bet: $10")
+	print("									Max bet: $100")
 	print()
 	while True:
-		bet_aux = input("Defina sua aposta.")
+		betInput = input("Place your bet.")
 		print()
 		try:
-			bet = int(bet_aux)
+			betInt = int(betInput)
 		except:
-			print("Ops. Por favor digite novamente.")
+			print("Please try again.")
 			print()
 		else:
-			if bet < 10:
-				print("Ops. A aposta mínima é de $10.")
+			if betInt > balance:
+				print('Insufficient balance.')
 				print()
-				continue
-			elif bet > 100:
-				print("Ops. A aposta máxima é de $100.")
+			elif betInt < 10:
+				print("The min bet is $10.")
 				print()
-				continue
+			elif betInt > 100:
+				print("The max bet is $100.")
+				print()
 			else:
-				saldo -= bet
-				bet_pool += bet
-				print("Aposta realizada.")
+				balance -= betInt
+				betPool += betInt
+				print("Bet accepted.")
 				print()
-				print("	Saldo atual: $", saldo)
+				print("	Current balance: $", balance)
 				print()
 				break
 
-dealer_sumA1 = 0
-dealer_sumA11 = 0
-dealer_sumtotal = 0
 
-def check_sum_dealer():
-	global dealer_sumA1
-	global dealer_sumA11
-	global dealer_sumtotal
+# --- DECK ---
+def deck_shuffle():
+	global deck
+	deck = []
+	cards = ["2","3","4","5","6","7","8","9","10","J","Q","K","A"]
+	for i in range(24):
+		for j in cards:
+			deck.append(j)
+	import random
+	random.shuffle(deck)
 
-	if dealer_cards[-1] == "A":
-		dealer_sumA1 += 1
-		dealer_sumA11 += 11
-	elif dealer_cards[-1] in "JQK":
-		dealer_sumA1 += 10
-		dealer_sumA11 +=10
+
+# --- HIT AND SHOW CARDS ---
+def dealerHit():
+	global dealerCards
+	global dealerSums
+	global dealerTotal
+	global deck
+	dealerCards.append(deck[-1])
+	deck.pop()
+	cardValues = checkSum(dealerCards)
+	dealerSums[0] += cardValues[0]
+	dealerSums[1] += cardValues[1]
+	dealerTotal = cardsTotalSum(dealerSums)
+
+
+def playerHit():
+	global playerCards
+	global playerSums
+	global playerTotal
+	global deck
+	playerCards.append(deck[-1])
+	deck.pop()
+	cardValues = checkSum(playerCards)
+	playerSums[0] += cardValues[0]
+	playerSums[1] += cardValues[1]
+	playerTotal = cardsTotalSum(playerSums)
+
+
+def showCards():
+	print("Dealer's cards:")
+	print(dealerCards)
+	print(f"Dealer's total: {dealerTotal}")
+	print()
+	print('Your cards:')
+	print(playerCards)
+	print(f'Your total: {playerTotal}')
+	print()
+
+
+# --- CARDS SUM WITH ACE=1 AND ACE=11 ---
+def checkSum(cards):
+	sumA1 = 0
+	sumA11 = 0
+	if cards[-1] == "A":
+		sumA1 += 1
+		sumA11 += 11
+	elif cards[-1] in "JQK":
+		sumA1 += 10
+		sumA11 += 10
 	else:
-		dealer_sumA1 += int(dealer_cards[-1])
-		dealer_sumA11 += int(dealer_cards[-1])
+		sumA1 += int(cards[-1])
+		sumA11 += int(cards[-1])
+	return [sumA1, sumA11]
 
-	if dealer_sumA11 < 22:
-		dealer_sumtotal = dealer_sumA11
+
+# --- ACE VALUE CHOICE ---
+def cardsTotalSum(cards):
+	if cards[1] < 22:
+		return cards[1]
 	else:
-		dealer_sumtotal = dealer_sumA1
+		return cards[0]
 
-player_sumA1 = 0
-player_sumA11 = 0
-player_sumtotal = 0
 
-def check_sum_player():
-	global player_sumA1
-	global player_sumA11
-	global player_sumtotal
-
-	if player_cards[-1] == "A":
-		player_sumA1 += 1
-		player_sumA11 += 11
-	elif player_cards[-1] in "JQK":
-		player_sumA1 += 10
-		player_sumA11 +=10
-	else:
-		player_sumA1 += int(player_cards[-1])
-		player_sumA11 += int(player_cards[-1])
-
-	if player_sumA11 < 22:
-		player_sumtotal = player_sumA11
-	else:
-		player_sumtotal = player_sumA1
-
-player_blackjack = False
-dealer_blackjack = False
-
-def check_player_blackjack():
-	global player_blackjack
-	if (player_cards[0] in "JQK" and player_cards[1] == "A") or (player_cards[0] == "A" and player_cards[1] in "JQK"):
-		player_blackjack = True
-
-def check_dealer_blackjack():
-	global dealer_blackjack
-	if (dealer_cards[0] in "JQK" and dealer_cards[1] == "A") or (dealer_cards[0] == "A" and dealer_cards[1] in "JQK"):
-		dealer_blackjack = True
-
-def check_end_blackjack():
-	global bet_pool
-	global saldo
-	if player_blackjack == True:
-		dealer_show2()
-		player_show2()
-		check_dealer_blackjack()
-		if dealer_blackjack == True:
-			print("Empate.")
-			print()
-			input("Digite qualquer tecla para continuar.")
-			print()
-			saldo += bet_pool
-			bet_pool = 0
-			new_round()
+# --- CHECK FOR BLACKJACK ---
+def checkEnd():
+	if playerTotal == 21:
+		print('BlackJack!')
+		print()
+		if len(dealerCards) < 2:
+			dealerHit()
+			showCards()
+			if dealerTotal == 21:
+				print('Dealer too has a Blackjack.')
+				print('Push.')
+				print()
+				addToBalance(1)
+				gameStart()
+			else:
+				print('Blackjack! Player wins.')
+				print()
+				addToBalance(2.5)
+				gameStart()
 		else:
-			print("BLACKJACK! O jogador vence.")
+			print('Blackjack! Player wins.')
 			print()
-			input("Digite qualquer tecla para continuar.")
-			print()
-			saldo += bet_pool*2.5
-			bet_pool = 0
-			new_round()
-	elif dealer_blackjack == True:
+			addToBalance(2.5)
+			gameStart()
+	elif dealerTotal == 21:
+		print('BlackJack! Dealer wins!')
 		print()
-		print("BLACKJACK! O dealer vence.")
+		gameStart()
+	elif playerTotal > 21:
+		print('Bust! Dealer wins.')
 		print()
-		input("Digite qualquer tecla para continuar.")
+		gameStart()
+	elif dealerTotal > 21:
+		print('Bust! Player wins!')
 		print()
-		bet_pool = 0
-		new_round()
-
-choice = 0
-
-def options():		#incompleto
-	global choice
-	print("1 - Hit")
-	print("2 - Stand")
-	print("3 - Double down")
-	while True:
-		try:
-			choice = int(input("Digite a opção correspondente. (1-3)"))
-		except:
-			print("Opção inválida.")
-		else:
-			if choice < 1 or choice > 3:
-				print("Opção inválida.")
-				continue
-			elif choice == 1:
-				player_streak()
-			elif choice == 2:
-				dealer_streak()
-			elif choice == 3:
-				pass
-
-player_cards_count = 0
-
-def hit_player():
-	if player_cards_count == 0:
-		player_show2()
-	elif player_cards_count == 2:
-		player_show3()
-	elif player_cards_count == 3:
-		player_show4()
-	elif player_cards_count == 4:
-		player_show5()
-	elif player_cards_count == 5:
-		player_show6()
-	elif player_cards_count == 6:
-		player_show7()
-	elif player_cards_count == 7:
-		player_show8()
-	elif player_cards_count == 8:
-		player_show9()
-	elif player_cards_count == 9:
-		player_show10()
-	elif player_cards_count == 10:
-		player_show11()
-	elif player_cards_count == 11:
-		player_show12()
-
-dealer_cards_count = 0
-
-def hit_dealer():
-	if dealer_cards_count == 0:
-		dealer_show1()
-	elif dealer_cards_count == 1:
-		dealer_show2()
-	elif dealer_cards_count == 2:
-		dealer_show3()
-	elif dealer_cards_count == 3:
-		dealer_show4()
-	elif dealer_cards_count == 4:
-		dealer_show5()
-	elif dealer_cards_count == 5:
-		dealer_show6()
-	elif dealer_cards_count == 6:
-		dealer_show7()
-	elif dealer_cards_count == 7:
-		dealer_show8()
-	elif dealer_cards_count == 8:
-		dealer_show9()
-	elif dealer_cards_count == 9:
-		dealer_show10()
-	elif dealer_cards_count == 10:
-		dealer_show11()
-	elif dealer_cards_count == 11:
-		dealer_show12()
+		addToBalance(2)
+		gameStart()
+	elif playerStand and playerTotal > dealerTotal:
+		print('PLayer wins.')
+		print()
+		addToBalance(2)
+		gameStart()
+	elif playerStand and dealerTotal > playerTotal:
+		print('Dealer wins.')
+		print()
+		gameStart()
 
 
-def check_end():
-	global bet_pool
-	global saldo
-	if player_sumtotal > 21:
-		print("O jogador estourou! O dealer vence.")
-		print()
-		input("Digite qualquer tecla para continuar.")
-		print()
-		bet_pool = 0
-		new_round()
-	elif dealer_sumtotal > 21:
-		print("O dealer estourou! O jogador vence.")
-		print()
-		input("Digite qualquer tecla para continuar.")
-		print()
-		saldo += bet_pool*2
-		bet_pool = 0
-		new_round()
-	elif dealer_sumtotal >= 17 and dealer_sumtotal > player_sumtotal:
-		print("O dealer vence.")
-		print()
-		input("Digite qualquer tecla para continuar.")
-		print()
-		bet_pool = 0
-		new_round()
-	elif dealer_sumtotal >= 17 and dealer_sumtotal < player_sumtotal:
-		print("O jogador vence.")
-		print()
-		input("Digite qualquer tecla para continuar.")
-		print()
-		saldo += bet_pool*2
-		bet_pool = 0
-		new_round()
-	elif dealer_sumtotal >= 17 and dealer_sumtotal == player_sumtotal:
-		print("Empate.")
-		print()
-		input("Digite qualquer tecla para continuar.")
-		print()
-		saldo += bet_pool
-		bet_pool = 0
-		new_round()
+# --- ADD POOL TO BALANCE ---
+def addToBalance(n):
+	global balance
+	balance += betPool*n
 
-def zero():
-	global player_cards_count
-	player_cards_count = 0
-	global dealer_cards_count
-	dealer_cards_count = 0
-	global dealer_sumtotal
-	dealer_sumtotal = 0
-	global player_sumtotal
-	player_sumtotal = 0
-	global player_sumA1
-	player_sumA1 = 0
-	global player_sumA11
-	player_sumA11 = 0
-	global dealer_sumA1
-	dealer_sumA1 = 0
-	global dealer_sumA11
-	dealer_sumA11 = 0
 
-def new_round():
-	zero()
+# SET UP AND RESET
+def rinse():
+	global playerCards
+	global dealerCards
+	global dealerTotal
+	global playerTotal
+	global playerSums
+	global dealerSums
+	global playerStand
+	playerCards = []
+	dealerCards = []
+	playerTotal = 0
+	dealerTotal = 0
+	playerSums = [0, 0]
+	dealerSums = [0, 0]
+	playerStand = False
+
+
+# GAME'S FIRST FASE
+def gameStart():
+	rinse()
 	deck_shuffle()
 	bets()
-	hit_dealer()
-	hit_player()
-	check_player_blackjack()
-	check_end_blackjack()
-	options()
-
-def player_streak():
-	hit_player()
-	check_end()
-	options()
-
-def dealer_streak():
-	hit_dealer()
-	if dealer_cards_count == 2:
-		check_dealer_blackjack()
-		if dealer_blackjack == True:
-			check_end_blackjack()
-		check_end()
-		print()
-		input("Digite qualquer tecla para continuar.")
-		print()
-		dealer_streak()
-	else:
-		check_end()
-		print()
-		input("Digite qualquer tecla para continuar.")
-		print()
-		dealer_streak()
+	dealerHit()
+	playerHit()
+	playerHit()
+	showCards()
+	checkEnd()
+	choiceLoop()
 
 
+# --- GAME LOOP ---
+playerStand = False
+def choiceLoop():
+	global playerStand
+	choice = 0
+	print("1 - Hit")
+	print("2 - Stand")
+	while True:
+		try:
+			choice = int(input("Make your choice. (1-2)"))
+		except:
+			print("Please try again.")
+		else:
+			print()
+			if choice < 1 or choice > 2:
+				print("Please try again.")
+			elif choice == 1:
+				playerHit()
+				showCards()
+				checkEnd()
+			elif choice == 2:
+				playerStand = True
+				while dealerTotal < 17:
+					dealerHit()
+					showCards()
+					if dealerTotal > 16:
+							checkEnd()
 
+
+# --- CALLS ---
 opening()
+gameStart()
