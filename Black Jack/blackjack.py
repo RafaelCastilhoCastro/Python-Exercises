@@ -187,7 +187,7 @@ def addToBalance(n):
 	balance += betPool*n
 
 
-# SET UP AND RESET
+# --- SET UP AND RESET ---
 def rinse():
 	global playerCards
 	global dealerCards
@@ -205,7 +205,7 @@ def rinse():
 	playerStand = False
 
 
-# GAME'S FIRST FASE
+# --- GAME'S FIRST FASE ---
 def gameStart():
 	rinse()
 	deck_shuffle()
@@ -244,7 +244,7 @@ def choiceLoop():
 					dealerHit()
 					showCards()
 					if dealerTotal > 16:
-							checkEnd()
+						checkEnd()
 
 
 # --- CALLS ---
